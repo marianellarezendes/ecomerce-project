@@ -139,3 +139,88 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.login{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ #btnLogin{
+  background-color:#D61C6C;
+  }
+
+  .color-card{
+     
+    border-color: #504e4e42;
+    border-width: 3px;
+    border-radius: 0.8rem;
+    background: linear-gradient(40deg,#315ba2,#e4d90f3a,#ea6060d2,#7c042c);
+     
+    
+     }
+
+  .text-int{
+    font-weight: 515;
+    color:#343a40;
+  }
+
+  .img-user{
+    width: 70px;
+    height: 70px;
+    
+  }
+
+.imgUu{
+  max-width: fit-content;
+}
+
+
+.btn-inferior-page{
+  margin-top: 50px;
+  background: linear-gradient(#f65599,#4d0316);
+  color: white;
+  
+}
+
+ .btn-Cantidad{
+   border-color: black;
+   
+   border: solid;
+   background-color: cornflowerblue;
+ }
+
+
+  .errorValidacion{
+
+    border-color: #dc3545;
+    border-width: 3px solid;
+  }
+
+  .colorAlertCart{
+
+    color: #dc3545;
+  }
+
+  .imgInicio{
+
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+  }
+
+  .body-inicio{
+
+   background: linear-gradient(60deg, #E3E3E3,#5D6874);
+
+  }
+
+  .footer-inicio{
+    
+    background: linear-gradient(  #2C2B2B,#2E292C);
+  }
+
+
+  
+  
+ 
+

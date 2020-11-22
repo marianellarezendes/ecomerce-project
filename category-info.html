@@ -16,15 +16,51 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+
+
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link dropdown-toggle" href="my-profile.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hola <span class="nombreUsuario"></span>            </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item cerrar-sesion" href="index.html">Cerrar sesión</a>
+              </div>
+        <li class="nav-item">
+          <a class="nav-link" href="inicio.html">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Opciones
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="products.html">Productos</a>
+            <a class="dropdown-item" href="categories.html">Categorías</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="sell.html">Vender</a>
+          </div>
+        </li>
+       
+      </ul>
+    </div>
+     
     </div>
   </nav>
+
+
   <main role="main">
     <div class="container mt-5">
       <div class="text-center p-4">
@@ -57,7 +93,7 @@
           </div>
         </dd>
       </dl>
-      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
+      <a type="button" class="btn btn-dark btn-block  btn-inferior-page" href="products.html">Ver productos</a>
     </div>
   </main>
   <footer class="text-muted">

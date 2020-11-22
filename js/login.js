@@ -1,6 +1,20 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){
+$("#btnLogin").on("click" ,function(){
+    let user = $("#emailInput").val();
+    let pass = $("#passInput").val();
+    
+    if(user!="" && pass!=""){
+        window.sessionStorage.setItem("user",user);
+        location.href="inicio.html"
+    }else {
+        alert("Los campos correo electrónico y cotraseña no pueden estar vacios!")
+    }
+})
 
-});
+$(".nombreUsuario").text(sessionStorage.getItem("user"));
+
+
+
+$(".cerrar-sesion").on("click" ,function(){
+    sessionStorage.clear();
+
+})

@@ -34,28 +34,99 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+
+
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link dropdown-toggle" href="my-profile.html" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hola <span class="nombreUsuario"></span> </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item cerrar-sesion" href="index.html">Cerrar sesión</a>
+              </div>
+            <li class="nav-item">
+              <a class="nav-link" href="inicio.html">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Opciones
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="products.html">Productos</a>
+                <a class="dropdown-item" href="categories.html">Categorías</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="sell.html">Vender</a>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="text-center p-4 ">
+    <h2>Mi perfil</h2>
+    <p class="lead">Aquí podrás configurar las preferencias de tu cuenta</p>
+  </div>
+<div class="body-inicio">
+  <div class="container p-4" >
+
+    <div class="card">
+      <div class="card-body ">
+
+        <div>
+          <label for="inputAddress">Nombres:</label>
+          <input type="text" class="form-control" id="firstNameProfile" placeholder="">
+        </div>
+        <div>
+          <label for="inputAddress">Apellidos:</label>
+          <input type="text" class="form-control" id="lastNameProfile" placeholder="">
+        </div>
+        <div>
+          <label for="inputAddress">Edad:</label>
+          <input type="text" class="form-control" id="ageProfile" placeholder="">
+        </div>
+        <div>
+          <label for="inputAddress">E-mail:</label>
+          <input type="text" class="form-control" id="emailProfile" placeholder="">
+        </div>
+        <div>
+          <label for="inputAddress">Teléfono de contacto:</label>
+          <input type="text" class="form-control" id="contactNumberProfile" placeholder="">
+        </div>
+        <br>
+
+        <a id="saveChanges" href="#" class="btn btn-danger btn-block">Modificar datos</a>
+
+
+      </div>
     </div>
   </div>
-  <footer class="text-muted bg-light">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
+</div>
+
+
+
+
+
+
+
+  
+
+
   </footer>
   <div class="alert fade alert-success" role="alert" id="alertResult">
     <span id="resultSpan"></span>
@@ -74,6 +145,7 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
 </body>

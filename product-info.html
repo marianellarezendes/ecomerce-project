@@ -11,28 +11,123 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </link>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+
+
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link dropdown-toggle" href="my-profile.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hola <span class="nombreUsuario"></span>            </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item cerrar-sesion" href="index.html">Cerrar sesión</a>
+              </div>
+        <li class="nav-item">
+          <a class="nav-link" href="inicio.html">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            Opciones
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="products.html">Productos</a>
+            <a class="dropdown-item" href="categories.html">Categorías</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="sell.html">Vender</a>
+          </div>
+        </li>
+        
+      </ul>
+    </div>
+     
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
-  </div>
+  </nav>
+
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información del producto seleccionado.</p>
+        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea el producto
+          seleccionado previamente, siempre se visualizará la presente: <strong>Auto: Chevrolet Onix Joy</strong>.</p>
+      </div>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Cantidad de productos vendidos</dt>
+        <dd>
+          <p id="productCount"></p>
+        </dd>
+
+        <dt>Categoria:</dt>
+        <dd>
+          <p id="productCategory"></p>
+        </dd>
+        <dt>Precio</dt>
+        <dd>
+          <p id="productPrice"></p>
+        </dd>
+        <dt>Productos relacionados</dt>
+        <dd>
+          <p id="relatedProducts"></p>
+        </dd>
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="productImagesGallery">
+          </div>
+        </dd>
+      </dl>
+
+      <div id="reviewsUsers">
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="newComment" placeholder="Comente aquí..." class="form-control"
+          aria-label="Text input with segmented dropdown button">
+        <div class="input-group-append">
+          <button type="button" class="btn btn-outline-secondary" id="btnComment">Comentar</button>
+          <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">1 estrella</a>
+            <a class="dropdown-item" href="#">2 estrellas</a>
+            <a class="dropdown-item" href="#">3 estrellas</a>
+            <a class="dropdown-item" href="#">4 estrellas</a>
+            <a class="dropdown-item" href="#">5 estrellas</a>
+
+          </div>
+        </div>
+        
+        <a type="button" class="btn btn-dark btn-block  btn-inferior-page" href="products.html">Ver productos</a>
+      </div>
+  </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -50,10 +145,17 @@
       <div></div>
     </div>
   </div>
+
+
+
+
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/product-info.js"></script>
+
 </body>
 
 </html>

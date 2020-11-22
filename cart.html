@@ -34,23 +34,233 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+
+
+  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark sticky-top">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link dropdown-toggle" href="my-profile.html" id="navbarDropdown" role="button"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hola <span class="nombreUsuario"></span> </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="cart.html">Mi carrito</a>
+                <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item cerrar-sesion" href="index.html">Cerrar sesión</a>
+              </div>
+            <li class="nav-item">
+              <a class="nav-link" href="inicio.html">Inicio</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Opciones
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="products.html">Productos</a>
+                <a class="dropdown-item" href="categories.html">Categorías</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="sell.html">Vender</a>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <main role="main" class="pb-5">
+    <div class="text-center p-4">
+      <h2>Mi carrito</h2>
+      <p class="lead">Verás aquí todos los productos de tu carrito.</p>
     </div>
-  </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="row table-danger">
+            <div class="col-lg-6">Productos</div>
+
+            <div class="col-lg-3">Cantidad</div>
+            <div class="col-lg-3">Precio</div>
+          </div>
+          <div class="row" id="contentCart">
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="card border-dark mb-3" style=" width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Detalle compra:</h5>
+              <hr>
+              <p class="card-text">Subtotal: <span id="currencyCart"></span> <span id="subtotalCart"></span> </p>
+              <p class="card-text">Envío: UYU <span id="ShippingCost"></span></p>
+              <p class="card-text">Total: UYU <span id="totalCart"></span></p>
+              <hr>
+              <h6>Método de envío</h6>
+              <br>
+              <div class="form-group">
+                <label for="inputAddress">Dirección:</label>
+                <input type="text" class="form-control" id="inputAddress" placeholder="ex: Av. Italia 1234 ">
+                <div class="form-group ">
+                  <label for="inputCountry">País:</label>
+                  <input type="text" class="form-control" id="inputCountry">
+                </div>
+                <hr>
+                <h6>Tipo de envío:</h6>
+                <br>
+
+                <fieldset class="form-group">
+                  <div class="row">
+                    <legend class="col-form-label"></legend>
+                    <div class="col-sm-10">
+
+                      <form id="shippingForm">
+                        <div class="form-check">
+                          <input id="premiumShipping" class="form-check-input" type="radio" name="shippingRadio"
+                            id="gridRadios1" value="premium" checked>
+                          <label class="form-check-label" for="gridRadios1">
+                            Premium (2 a 5 días) - Costo del 15% sobre el subtotal.
+
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input id="expressShipping" class="form-check-input" type="radio" name="shippingRadio"
+                            id="gridRadios2" value="express">
+                          <label class="form-check-label" for="gridRadios2">
+                            Express (5 a 8 días) - Costo del 7% sobre el subtotal.
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input id="standardShipping" class="form-check-input" type="radio" name="shippingRadio"
+                            id="gridRadios3" value="standard">
+                          <label class="form-check-label" for="gridRadios3">
+                            Standard (12 a 15 días) - Costo del 5% sobre el subtotal.
+
+                          </label>
+                        </div>
+                      </form>
+
+                    </div>
+                  </div>
+              </div>
+              <br>
+              <h6>Forma de pago: <a id="paymentMethodModal" data-toggle="modal" data-target="#openModal"
+                  href="">Seleccionar</a>
+                <span id="missingPayment"></span>
+                <span id="ShowPaymentMethod"></span> </h6>
+              <hr>
+              <p>Preferimos <img src="img/method payment.PNG" alt=""></p>
+              <span id="validationFailure"></span>
+              <br>
+              <input id="finalizePurchase" class="btn btn-danger btn-block" type="button" value="Finalizar compra">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="modal" tabindex="-1" id="openModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">¿Cómo deseas pagar?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <div class="form-check form-check-inline">
+                <input id="chooseCreditCard" class="form-check-input" type="radio" name="chooseMethod" value="option1"
+                  checked>
+                <label class="form-check-label" for="chooseCreditCard">Tarjeta de crédito</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input id="chooseBankDeposit" class="form-check-input" type="radio" name="chooseMethod" value="option2">
+                <label class="form-check-label" for="chooseBankDeposit">Transferencia bancaria</label>
+              </div>
+            </div>
+            <br>
+            <form id="creditCardMethod">
+              <div class="form-group modal-body">
+                <label for="formGroupExampleInput">Titular de la tarjeta</label>
+                <input type="text" class="form-control" id="titularDeLaTarjeta" placeholder="Example: Serj Tankian">
+              </div>
+              <div class="form-group modal-body">
+                <label for="formGroupExampleInput2">Número de la tarjeta</label>
+                <input type="text" class="form-control" id="numerosDeLaTarjeta" placeholder="ingrese todos los números">
+              </div>
+              <div class="form-group  row modal-body">
+                <div class="col-6"> <label for="inputZip">CVV</label>
+                  <input type="text" class="form-control  " id="inputCVV" placeholder="3 dígitos atras de la tarjeta">
+                </div>
+                <div class="col-6">
+                  <label for="inputZip">Fecha de vencimiento</label>
+                  <input type="text" class="form-control  " id="inputvencimiento" placeholder="mm/aa">
+                </div>
+              </div>
+            </form>
+            <hr>
+
+            <form id="bankDepositMethod" class="d-none">
+              <div class="form-group modal-body">
+                <label for="formGroupExampleInput">Titular de la cuenta a depositar</label>
+                <input id="personToDeposit" type="text" class="form-control" placeholder="Example: Jonathan Davis">
+              </div>
+              <div class="form-group modal-body">
+                <label for="formGroupExampleInput">Titular de la cuenta de origen</label>
+                <input id="personWhoDeposits" type="text" class="form-control" placeholder="Example: Corey Taylor">
+              </div>
+              <div class="form-group modal-body">
+                <label for="formGroupExampleInput2">Número de cuenta origen</label>
+                <input id="sourceAccount" type="text" class="form-control" placeholder="ingrese todos los números">
+              </div>
+              <div class="form-group modal-body">
+                <label for="formGroupExampleInput2">Número de cuenta destino</label>
+                <input id="destinationAccount" type="text" class="form-control" placeholder="ingrese todos los números">
+              </div>
+              <div class="form-group  row modal-body">
+                <div class="col-6"> <label for="inputZip">Entidad bancaria</label>
+                  <input id="" type="text" class="form-control  ">
+                </div>
+                <div class="col-6">
+                  <label for="inputZip">Notas</label>
+                  <input type="text" class="form-control  " placeholder="Ex: pago e-mercado">
+                </div>
+              </div>
+            </form>
+
+
+
+
+            <div class="modal-footer">
+              <span id="validationFailureModal"></span>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" id="paymentConfirmed">Aceptar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </main>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -62,8 +272,22 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
+  <script src="js/login.js"></script>
   <script src="js/init.js"></script>
   <script src="js/cart.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
